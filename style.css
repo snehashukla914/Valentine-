@@ -1,0 +1,102 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  background: linear-gradient(135deg, #ffafbd, #ffc3a0);
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* Floating Hearts */
+.hearts::before {
+  content: "💗 💕 💖 💘 💝";
+  position: absolute;
+  font-size: 24px;
+  animation: float 8s linear infinite;
+  opacity: 0.4;
+}
+
+@keyframes float {
+  from {
+    transform: translateY(100vh);
+  }
+  to {
+    transform: translateY(-100vh);
+  }
+}
+
+.container {
+  text-align: center;
+  padding: 20px;
+}
+
+.title {
+  font-family: 'Pacifico', cursive;
+  font-size: 32px;
+  color: #fff;
+  margin-bottom: 25px;
+  text-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 30px;
+  width: 340px;
+  border-radius: 25px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+  animation: fadeIn 0.5s ease;
+}
+
+.card p {
+  font-size: 18px;
+  color: #d6336c;
+  margin-bottom: 25px;
+  line-height: 1.6;
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.options button {
+  background: linear-gradient(135deg, #ff4d6d, #ff758f);
+  border: none;
+  color: white;
+  padding: 12px;
+  font-size: 15px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: 0.3s ease;
+  box-shadow: 0 5px 15px rgba(255, 77, 109, 0.5);
+}
+
+.options button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 25px rgba(255, 77, 109, 0.7);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mobile Friendly */
+@media (max-width: 400px) {
+  .card {
+    width: 90%;
+  }
+}
